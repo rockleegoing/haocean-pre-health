@@ -1,0 +1,24 @@
+package system
+
+import (
+	"github.com/gin-gonic/gin"
+	"ruoyi-go/app/admin/api/system"
+	"ruoyi-go/app/core/utils/jwt"
+)
+
+func InitPost(e *gin.Engine) {
+	v := e.Group("system/post")
+	{
+		auth := v.Group("")
+		auth.Use(jwt.JWTAuthMiddleware())
+		{
+			auth.GET("/list", system.ListPost)
+			auth.POST("/export", system.ExportPost)
+			auth.GET("/:postId", system.GetPostInfo)
+			auth.POST("", system.SavePost)
+			auth.PUT("", system.UploadPost)
+			auth.DELETE("/:postIds", system.DeletePost)
+			auth.GET("/optionselect", system.GetPostOptionSelect)
+		}
+	}
+}

@@ -1,0 +1,50 @@
+basePath: /
+host: 127.0.0.1:8080
+info:
+  contact:
+    name: Ruoyi-Go
+    url: https://gitee.com/OptimisticDevelopers/Ruoyi-Go
+  description: 基于Go，Gin，JWT，vue前后端分离的权限管理系统
+  title: Ruoyi-Go 接口文档
+  version: v1.0.2
+paths:
+  /:
+    get:
+      consumes:
+      - text/html
+      description: get string by ID
+      produces:
+      - text/html
+      responses:
+        "200":
+          description: OK
+      summary: 手机首页
+      tags:
+      - 手机首页
+  /old:
+    get:
+      consumes:
+      - text/html
+      description: get string by ID
+      produces:
+      - text/html
+      responses:
+        "200":
+          description: OK
+      summary: 手机首页(旧版)
+      tags:
+      - 手机首页
+  /protocol.html:
+    get:
+      consumes:
+      - text/html
+      description: 用户协议
+      produces:
+      - text/html
+      responses:
+        "200":
+          description: OK
+      summary: 用户协议
+      tags:
+      - 手机首页
+swagger: "2.0"

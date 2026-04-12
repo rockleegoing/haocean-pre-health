@@ -1,0 +1,76 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "基于Go，Gin，JWT，vue前后端分离的权限管理系统",
+        "title": "Ruoyi-Go 接口文档",
+        "contact": {
+            "name": "Ruoyi-Go",
+            "url": "https://gitee.com/OptimisticDevelopers/Ruoyi-Go"
+        },
+        "version": "v1.0.2"
+    },
+    "host": "127.0.0.1:8080",
+    "basePath": "/",
+    "paths": {
+        "/": {
+            "get": {
+                "description": "get string by ID",
+                "consumes": [
+                    "text/html"
+                ],
+                "produces": [
+                    "text/html"
+                ],
+                "tags": [
+                    "手机首页"
+                ],
+                "summary": "手机首页",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/old": {
+            "get": {
+                "description": "get string by ID",
+                "consumes": [
+                    "text/html"
+                ],
+                "produces": [
+                    "text/html"
+                ],
+                "tags": [
+                    "手机首页"
+                ],
+                "summary": "手机首页(旧版)",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/protocol.html": {
+            "get": {
+                "description": "用户协议",
+                "consumes": [
+                    "text/html"
+                ],
+                "produces": [
+                    "text/html"
+                ],
+                "tags": [
+                    "手机首页"
+                ],
+                "summary": "用户协议",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    }
+}
