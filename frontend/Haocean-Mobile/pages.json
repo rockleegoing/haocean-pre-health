@@ -1,0 +1,188 @@
+{
+	"pages": [
+		{
+			"path": "pages/login/index",
+			"style": {
+				"navigationBarTitleText": "登录",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/work/index",
+			"style": {
+				"navigationBarTitleText": "工作台",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/work/user/list",
+			"style": {
+				"navigationBarTitleText": "用户管理",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/work/user/edit",
+			"style": {
+				"navigationBarTitleText": "用户详情",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/work/notice/list",
+			"style": {
+				"navigationBarTitleText": "通知公告",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/work/notice/manage",
+			"style": {
+				"navigationBarTitleText": "公告管理",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/work/notice/detail",
+			"style": {
+				"navigationBarTitleText": "公告详情",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/work/notice/edit",
+			"style": {
+				"navigationBarTitleText": "公告编辑",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/center/index",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/center/profile",
+			"style": {
+				"navigationBarTitleText": "个人资料",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/center/log",
+			"style": {
+				"navigationBarTitleText": "操作日志",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/activate/index",
+			"style": {
+				"navigationBarTitleText": "设备激活"
+			}
+		},
+		{
+			"path": "pages/subject/select",
+			"style": {
+				"navigationBarTitleText": "选择单位"
+			}
+		},
+		{
+			"path": "pages/subject/add",
+			"style": {
+				"navigationBarTitleText": "添加单位"
+			}
+		},
+		{
+			"path": "pages/subject/detail",
+			"style": {
+				"navigationBarTitleText": "单位详情"
+			}
+		},
+		{
+			"path": "pages/record/list",
+			"style": {
+				"navigationBarTitleText": "执法记录"
+			}
+		},
+		{
+			"path": "pages/record/create",
+			"style": {
+				"navigationBarTitleText": "创建记录"
+			}
+		},
+		{
+			"path": "pages/record/detail",
+			"style": {
+				"navigationBarTitleText": "记录详情"
+			}
+		},
+		{
+			"path": "pages/evidence/upload",
+			"style": {
+				"navigationBarTitleText": "上传证据"
+			}
+		},
+		{
+			"path": "pages/document/create",
+			"style": {
+				"navigationBarTitleText": "文书制作"
+			}
+		},
+		{
+			"path": "pages/document/preview",
+			"style": {
+				"navigationBarTitleText": "文书预览"
+			}
+		},
+		{
+			"path": "pages/sync/index",
+			"style": {
+				"navigationBarTitleText": "数据同步"
+			}
+		}
+	],
+	"tabBar": {
+		"color": "#909399",
+		"selectedColor": "#5677fc",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"iconPath": "static/img/tabbar/home.png",
+			"selectedIconPath": "static/img/tabbar/home_art.png",
+			"text": "首页"
+		}, {
+			"pagePath": "pages/work/index",
+			"iconPath": "static/img/tabbar/center.png",
+			"selectedIconPath": "static/img/tabbar/center_art.png",
+			"text": "工作台"
+		}, {
+			"pagePath": "pages/center/index",
+			"iconPath": "static/img/tabbar/user.png",
+			"selectedIconPath": "static/img/tabbar/user_art.png",
+			"text": "我的"
+		}]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "卫生执法",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		"app-plus": {
+		  "softinputMode": "adjustResize"
+		}
+	},
+	"easycom": {
+		"^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
+	}
+}

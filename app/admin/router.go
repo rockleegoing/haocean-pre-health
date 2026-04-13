@@ -1,11 +1,11 @@
 package admin
 
 import (
-	api "ruoyi-go/app/admin/api/system"
-	"ruoyi-go/app/admin/router/monitor"
-	"ruoyi-go/app/admin/router/system"
-	"ruoyi-go/app/admin/router/tools"
-	"ruoyi-go/app/core/utils/jwt"
+	api "haocean/health-enforcement/app/admin/api/system"
+	"haocean/health-enforcement/app/admin/router/monitor"
+	"haocean/health-enforcement/app/admin/router/system"
+	"haocean/health-enforcement/app/admin/router/tools"
+	"haocean/health-enforcement/app/core/utils/jwt"
 	"time"
 
 	cache "github.com/chenyahui/gin-cache"
@@ -18,6 +18,7 @@ func Routers(e *gin.Engine) {
 	memoryStore := persist.NewMemoryStore(1 * time.Minute)
 	handlerFunc := cache.CacheByRequestURI(memoryStore, 2*time.Second)
 
+	// 根路径 API 路由（用于向后兼容）
 	e.GET("/index", api.IndexHandler)
 	e.GET("/captchaImage", api.CaptchaImageHandler)
 	// 登录
@@ -45,22 +46,14 @@ func Routers(e *gin.Engine) {
 	system.InitConfig(e)
 	system.InitDept(e)
 
-	/*monitor*/
-	monitor.InitCache(e)
-	monitor.InitLogininfor(e)
-	monitor.InitJob(e)
-	monitor.InitJobLog(e)
-	monitor.InitOnLine(e)
-	monitor.InitOperlog(e)
-	monitor.InitServer(e)
-
-	/*tools*/
-	tools.InitCommon(e)
-	tools.InitGen(e)
-
-	/*文件管理*/
-	//file.InitFile(e)
-
-	/*business业务路由*/
+	/*business 业务路由 - 卫生执法系统*/
+	system.InitIndustry(e)      // 行业分类
+	system.InitSubject(e)       // 监管单位
+	system.InitOfficial(e)      // 执法人员
+	system.InitDevice(e)        // 设备管理
+	system.InitActivateCode(e)  // 激活码
+	system.InitTemplate(e)      // 文书模板
+	system.InitRecord(e)        // 执法记录
+	system.InitSync(e)          // 数据同步
 
 }
