@@ -25,22 +25,14 @@
       "Npm(*)",
       "Pip(*)",
       "Bash(go test:*)",
-      "Bash(go build:*)"
+      "Bash(go build:*)",
+      "Bash(mysql:*)",
+      "Bash(/opt/anaconda3/bin/mysql:*)"
     ],
     "allowMultilineCommands": true
   },
   "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "uni-app-x-mcp"
-  ],
-  "hooks": {
-    "afterUserMessage": {
-      "if": "用户提到移动端、UniApp、小程序等关键词",
-      "then": "自动读取 docs/MOBILE.md 和 docs/STANDARD.md，并参考 frontend/Haocean-Mobile/pages/ 目录下的现有页面"
-    },
-    "beforeFinalAnswer": {
-      "if": "生成了代码修改或新增文件",
-      "then": "检查代码是否符合项目规范（STANDARD.md），并提醒用户运行编译/预览命令"
-    }
-  }
+  ]
 }
