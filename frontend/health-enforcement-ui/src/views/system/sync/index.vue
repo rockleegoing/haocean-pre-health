@@ -108,9 +108,12 @@
 
 <script>
 import { listSync, getSync, delSync, retrySync } from '@/api/system/sync'
+import Treeselect from "@riophae/vue-treeselect"
+import "@riophae/vue-treeselect/dist/vue-treeselect.css"
 
 export default {
   name: 'Sync',
+  components: { Treeselect },
   data() {
     return {
       loading: true,
@@ -149,6 +152,9 @@ export default {
       this.resetForm('queryForm')
       this.getList()
     },
+    handleQuery() {
+      this.getList()
+    },
     handleSelectionChange(selection) {
       this.ids = selection.map(item => item.syncId)
       this.single = selection.length !== 1
@@ -180,15 +186,15 @@ export default {
         cancelButtonText: '取消',
         type: 'warning'
       }).then(() => {
-        retrySync({ syncId: row.syncId }).then(response => {
+        retrySync({ queueId: row.queueId }).then(response => {
           this.$modal.msgSuccess('重试请求已提交')
           this.getList()
         })
       })
     },
     handleDelete(row) {
-      const syncIds = row.syncId || this.ids
-      this.$modal.confirm('是否确认删除同步记录？').then(function() {
+      const syncIds = row.queueId || this.ids
+      this.$modal.confirm('是否确认删除同步记录？').then(() => {
         return delSync(syncIds)
       }).then(() => {
         this.getList()
