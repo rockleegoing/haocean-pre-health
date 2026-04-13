@@ -31,7 +31,10 @@ func LoginHandler(context *gin.Context) {
 		return
 	}
 	if !loginBeforeCheck(param, context) {
-		context.JSON(http.StatusOK, R.ReturnFailMsg("登录失败，验证码错误"))
+		context.JSON(http.StatusOK, gin.H{
+			"msg":  "请输入正确的验证码",
+			"code": http.StatusInternalServerError,
+		})
 		return
 	}
 	isExist := system.IsExistUser(param.UserName)
@@ -54,10 +57,6 @@ func loginBeforeCheck(param system.LoginParam, context *gin.Context) bool {
 	isVerify := utils2.VerifyCaptcha(param.Uuid, param.Code)
 	if !isVerify {
 		monitor.LoginInfoAdd(context, param, "登录失败，验证码错误", false)
-		context.JSON(http.StatusOK, gin.H{
-			"msg":  "请输入正确的验证码",
-			"code": http.StatusInternalServerError,
-		})
 		return false
 	}
 	return true
