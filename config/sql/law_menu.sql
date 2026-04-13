@@ -6,7 +6,7 @@
 -- 一级菜单：卫生执法
 -- ============================
 INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`, `component`, `query`, `route_name`, `is_frame`, `is_cache`, `menu_type`, `visible`, `status`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) VALUES
-(200, '卫生执法', 0, 2, 'law', NULL, NULL, NULL, 1, 0, 'M', '0', '0', NULL, 'law', 'admin', NOW(), '', NULL, '卫生执法系统');
+(200, '卫生执法', 0, 2, 'law', NULL, NULL, NULL, 1, 0, 'M', '0', '0', NULL, 'star', 'admin', NOW(), '', NULL, '卫生执法系统');
 
 -- ============================
 -- 二级菜单：行业分类管理
@@ -18,7 +18,7 @@ INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`
 -- 二级菜单：监管单位管理
 -- ============================
 INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`, `component`, `query`, `route_name`, `is_frame`, `is_cache`, `menu_type`, `visible`, `status`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) VALUES
-(202, '监管单位', 200, 2, 'law/subject', 'system/subject/index', NULL, NULL, 1, 0, 'C', '0', '1', 'law:subject:list', 'profile', 'admin', NOW(), '', NULL, '');
+(202, '监管单位', 200, 2, 'law/subject', 'system/subject/index', NULL, NULL, 1, 0, 'C', '0', '0', 'law:subject:list', 'user', 'admin', NOW(), '', NULL, '');
 
 -- ============================
 -- 二级菜单：执法人员管理
@@ -30,7 +30,7 @@ INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`
 -- 二级菜单：设备管理
 -- ============================
 INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`, `component`, `query`, `route_name`, `is_frame`, `is_cache`, `menu_type`, `visible`, `status`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) VALUES
-(204, '设备管理', 200, 4, 'law/device', 'system/device/index', NULL, NULL, 1, 0, 'C', '0', '1', 'law:device:list', 'device', 'admin', NOW(), '', NULL, '');
+(204, '设备管理', 200, 4, 'law/device', 'system/device/index', NULL, NULL, 1, 0, 'C', '0', '0', 'law:device:list', 'phone', 'admin', NOW(), '', NULL, '');
 
 -- ============================
 -- 二级菜单：激活码管理
@@ -42,7 +42,7 @@ INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`
 -- 二级菜单：文书模板管理
 -- ============================
 INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`, `component`, `query`, `route_name`, `is_frame`, `is_cache`, `menu_type`, `visible`, `status`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) VALUES
-(206, '文书模板', 200, 6, 'law/template', 'system/template/index', NULL, NULL, 1, 0, 'C', '0', '1', 'law:template:list', 'document', 'admin', NOW(), '', NULL, '');
+(206, '文书模板', 200, 6, 'law/template', 'system/template/index', NULL, NULL, 1, 0, 'C', '0', '0', 'law:template:list', 'edit', 'admin', NOW(), '', NULL, '');
 
 -- ============================
 -- 二级菜单：执法记录管理
