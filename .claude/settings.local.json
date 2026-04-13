@@ -27,7 +27,9 @@
       "Bash(go test:*)",
       "Bash(go build:*)",
       "Bash(mysql:*)",
-      "Bash(/opt/anaconda3/bin/mysql:*)"
+      "Bash(/opt/anaconda3/bin/mysql:*)",
+      "WebFetch(domain:ext.dcloud.net.cn)",
+      "WebFetch(domain:ask.dcloud.net.cn)"
     ],
     "allowMultilineCommands": true
   },

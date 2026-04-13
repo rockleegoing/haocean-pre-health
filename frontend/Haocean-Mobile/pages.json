@@ -149,6 +149,53 @@
 			"style": {
 				"navigationBarTitleText": "数据同步"
 			}
+		},
+		{
+			"path": "pages/supervision-item/index",
+			"style": {
+				"navigationBarTitleText": "监管事项",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/supervision-item/list",
+			"style": {
+				"navigationBarTitleText": "监管子项",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/supervision-item/detail",
+			"style": {
+				"navigationBarTitleText": "事项详情",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/standard-phrase/index",
+			"style": {
+				"navigationBarTitleText": "规范用语",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/standard-phrase/list",
+			"style": {
+				"navigationBarTitleText": "规范类别",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/standard-phrase/detail",
+			"style": {
+				"navigationBarTitleText": "规范详情"
+			}
+		},
+		{
+			"path": "pages/standard-phrase/search",
+			"style": {
+				"navigationBarTitleText": "搜索规范用语"
+			}
 		}
 	],
 	"tabBar": {
