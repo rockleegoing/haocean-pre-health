@@ -6,7 +6,7 @@
 -- 一级菜单：卫生执法
 -- ============================
 INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`, `component`, `query`, `route_name`, `is_frame`, `is_cache`, `menu_type`, `visible`, `status`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) VALUES
-(200, '卫生执法', 0, 2, 'law', NULL, NULL, NULL, 1, 0, 'M', '0', '0', NULL, 'component', 'admin', NOW(), '', NULL, '卫生执法系统');
+(200, '卫生执法', 0, 2, 'law', NULL, NULL, NULL, 1, 0, 'M', '0', '0', NULL, 'law', 'admin', NOW(), '', NULL, '卫生执法系统');
 
 -- ============================
 -- 二级菜单：行业分类管理
