@@ -6,13 +6,13 @@
 -- 一级菜单：卫生执法
 -- ============================
 INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`, `component`, `query`, `route_name`, `is_frame`, `is_cache`, `menu_type`, `visible`, `status`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) VALUES
-(200, '卫生执法', 0, 2, 'law', NULL, NULL, NULL, 1, 0, 'M', '0', '1', NULL, 'component', 'admin', NOW(), '', NULL, '卫生执法系统');
+(200, '卫生执法', 0, 2, 'law', NULL, NULL, NULL, 1, 0, 'M', '0', '0', NULL, 'component', 'admin', NOW(), '', NULL, '卫生执法系统');
 
 -- ============================
 -- 二级菜单：行业分类管理
 -- ============================
 INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`, `component`, `query`, `route_name`, `is_frame`, `is_cache`, `menu_type`, `visible`, `status`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) VALUES
-(201, '行业分类', 200, 1, 'law/industry', 'system/industry/index', NULL, NULL, 1, 0, 'C', '0', '1', 'law:industry:list', 'tree', 'admin', NOW(), '', NULL, '');
+(201, '行业分类', 200, 1, 'law/industry', 'system/industry/index', NULL, NULL, 1, 0, 'C', '0', '0', 'law:industry:list', 'tree', 'admin', NOW(), '', NULL, '');
 
 -- ============================
 -- 二级菜单：监管单位管理
