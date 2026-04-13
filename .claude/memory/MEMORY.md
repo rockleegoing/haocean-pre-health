@@ -4,4 +4,5 @@
 - [UniApp 移动端开发助手](uniapp_mobile_dev.md) — 移动端开发专用助手
 - [Git 提交推送助手](git_commit_push.md) — Git 规范化提交和推送
 - [代码审查助手](code_review.md) — 代码质量和规范性审查
-- [自动触发规则](auto_trigger_rules.md) — 定义技能和行为的自动触发条件
+- [自动触发规则 v1](auto_trigger_rules.md) — 基础版自动触发条件
+- [自动触发规则 v2](auto_trigger_rules_v2.md) — 深度细化版触发规则（当前使用）
