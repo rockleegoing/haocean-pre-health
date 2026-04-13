@@ -3,10 +3,10 @@ package monitor
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"ruoyi-go/app/admin/model/constants"
-	"ruoyi-go/app/admin/model/monitor"
-	"ruoyi-go/app/admin/model/tools"
-	"ruoyi-go/app/core/utils"
+	"haocean/health-enforcement/app/admin/model/constants"
+	"haocean/health-enforcement/app/admin/model/monitor"
+	"haocean/health-enforcement/app/admin/model/tools"
+	"haocean/health-enforcement/app/core/utils"
 	"strconv"
 )
 

@@ -2,7 +2,7 @@ package monitor
 
 import (
 	"github.com/gin-gonic/gin"
-	"ruoyi-go/app/admin/model/monitor"
+	"haocean/health-enforcement/app/admin/model/monitor"
 )
 
 var (

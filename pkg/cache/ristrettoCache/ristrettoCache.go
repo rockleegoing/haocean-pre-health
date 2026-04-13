@@ -2,7 +2,7 @@ package ristrettoCache
 
 import (
 	"errors"
-	"ruoyi-go/pkg/ristretto"
+	"haocean/health-enforcement/pkg/ristretto"
 	"time"
 )
 

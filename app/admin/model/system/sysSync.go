@@ -9,7 +9,7 @@ import (
 // SysSyncQueue 同步队列
 type SysSyncQueue struct {
 	QueueId      int64           `gorm:"primary_key;autoIncrement" json:"queueId"`       // 队列 ID
-	TableName    string          `gorm:"size:50;not null;index" json:"tableName"`        // 表名
+	TableRef     string          `gorm:"size:50;not null;index;column:table_name" json:"tableName"`        // 表名
 	RecordId     int64           `gorm:"not null;index" json:"recordId"`                 // 记录 ID
 	Action       string          `gorm:"size:20;not null" json:"action"`                 // 操作类型（insert/update/delete）
 	SyncType     string          `gorm:"size:20;default:'app_to_server'" json:"syncType"` // 同步类型
@@ -24,6 +24,7 @@ type SysSyncQueue struct {
 	CreateBy     string          `gorm:"size:64" json:"createBy"`                        // 创建者
 }
 
+// TableName 返回表名
 func (SysSyncQueue) TableName() string {
 	return "law_sync_queue"
 }
@@ -105,9 +106,44 @@ func GetSyncStatus(deviceId int64) map[string]interface{} {
 	mysql.MysqlDb().Where("device_id = ?", deviceId).Order("create_time DESC").First(&lastSync)
 
 	return map[string]interface{}{
-		"pending_count":   pendingCount,
-		"failed_count":    failedCount,
-		"last_sync_time":  lastSync.EndTime,
+		"pending_count":    pendingCount,
+		"failed_count":     failedCount,
+		"last_sync_time":   lastSync.EndTime,
 		"last_sync_status": lastSync.Status,
 	}
+}
+
+// GetSyncData 获取同步数据（供移动端同步使用）
+func GetSyncData(deviceId string, lastSyncTime string) []map[string]interface{} {
+	// 获取待同步的数据
+	queues := GetPendingSyncQueue(100)
+	var syncData []map[string]interface{}
+
+	for _, queue := range queues {
+		data := map[string]interface{}{
+			"queue_id":   queue.QueueId,
+			"table_name": queue.TableRef,
+			"record_id":  queue.RecordId,
+			"action":     queue.Action,
+			"data":       queue.Data,
+		}
+		syncData = append(syncData, data)
+	}
+
+	return syncData
+}
+
+// RetrySyncQueue 重试同步队列
+func RetrySyncQueue(queueId int64) string {
+	var queue SysSyncQueue
+	mysql.MysqlDb().Where("queue_id = ?", queueId).First(&queue)
+	if queue.QueueId == 0 {
+		return "队列不存在"
+	}
+	mysql.MysqlDb().Model(&SysSyncQueue{}).Where("queue_id = ?", queueId).Updates(map[string]interface{}{
+		"status":       "pending",
+		"error_msg":    "",
+		"retry_count":  queue.RetryCount + 1,
+	})
+	return "操作成功"
 }

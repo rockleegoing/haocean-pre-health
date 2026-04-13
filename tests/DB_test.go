@@ -1,9 +1,9 @@
 package tests
 
 import (
-	"ruoyi-go/app/admin/model/system"
-	"ruoyi-go/config"
-	"ruoyi-go/pkg/db"
+	"haocean/health-enforcement/app/admin/model/system"
+	"haocean/health-enforcement/config"
+	"haocean/health-enforcement/pkg/db"
 	"testing"
 )
 

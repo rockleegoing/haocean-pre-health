@@ -1,9 +1,9 @@
 package cache
 
 import (
-	"ruoyi-go/pkg/cache/fileCache"
-	"ruoyi-go/pkg/cache/redisCache"
-	"ruoyi-go/pkg/cache/ristrettoCache"
+	"haocean/health-enforcement/pkg/cache/fileCache"
+	"haocean/health-enforcement/pkg/cache/redisCache"
+	"haocean/health-enforcement/pkg/cache/ristrettoCache"
 	"time"
 )
 

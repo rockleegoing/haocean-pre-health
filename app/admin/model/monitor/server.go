@@ -10,7 +10,7 @@ import (
 	"os/exec"
 	"path/filepath"
 	"runtime"
-	"ruoyi-go/app/core/utils"
+	"haocean/health-enforcement/app/core/utils"
 	"strings"
 	"time"
 )

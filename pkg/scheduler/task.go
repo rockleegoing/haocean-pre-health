@@ -3,7 +3,7 @@ package scheduler
 import (
 	"fmt"
 	"github.com/robfig/cron"
-	"ruoyi-go/app/admin/model/monitor"
+	"haocean/health-enforcement/app/admin/model/monitor"
 	"sync"
 	"time"
 )

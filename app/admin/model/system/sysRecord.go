@@ -13,6 +13,7 @@ type SysEnforcementRecord struct {
 	SubjectId      int64           `gorm:"index" json:"subjectId"`                                   // 单位 ID
 	SubjectName    string          `gorm:"size:100" json:"subjectName"`                              // 单位名称（冗余）
 	IndustryId     int64           `gorm:"index" json:"industryId"`                                  // 行业分类 ID
+	IndustryName   string          `gorm:"size:100;default:''" json:"industryName"`                  // 行业分类名称（冗余）
 	CheckDate      time.Time       `gorm:"type:datetime" json:"checkDate"`                           // 检查日期
 	CheckType      string          `gorm:"size:20" json:"checkType"`                                 // 检查类型（日常/专项/复查/投诉）
 	Status         int             `gorm:"default:0" json:"status"`                                  // 状态（0:草稿/1:待上报/2:已上报/3:已审核/4:已归档）

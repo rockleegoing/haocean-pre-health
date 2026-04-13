@@ -7,17 +7,17 @@ import (
 	useragent "github.com/wenlng/go-user-agent"
 	"github.com/xuri/excelize/v2"
 	"net/http"
-	"ruoyi-go/app/admin/model/cache"
-	"ruoyi-go/app/admin/model/constants"
-	"ruoyi-go/app/admin/model/monitor"
-	"ruoyi-go/app/admin/model/system"
-	"ruoyi-go/app/admin/model/tools"
-	utils2 "ruoyi-go/app/core/utils"
-	"ruoyi-go/app/core/utils/R"
-	"ruoyi-go/app/core/utils/jwt"
-	"ruoyi-go/config"
-	"ruoyi-go/pkg/cache/redisCache"
-	"ruoyi-go/pkg/mysql"
+	"haocean/health-enforcement/app/admin/model/cache"
+	"haocean/health-enforcement/app/admin/model/constants"
+	"haocean/health-enforcement/app/admin/model/monitor"
+	"haocean/health-enforcement/app/admin/model/system"
+	"haocean/health-enforcement/app/admin/model/tools"
+	utils2 "haocean/health-enforcement/app/core/utils"
+	"haocean/health-enforcement/app/core/utils/R"
+	"haocean/health-enforcement/app/core/utils/jwt"
+	"haocean/health-enforcement/config"
+	"haocean/health-enforcement/pkg/cache/redisCache"
+	"haocean/health-enforcement/pkg/mysql"
 	"strconv"
 	"strings"
 	"time"
@@ -52,14 +52,15 @@ func loginBeforeCheck(param system.LoginParam, context *gin.Context) bool {
 		return true
 	}
 	isVerify := utils2.VerifyCaptcha(param.Uuid, param.Code)
-	monitor.LoginInfoAdd(context, param, "登录失败，验证码错误", false)
 	if !isVerify {
+		monitor.LoginInfoAdd(context, param, "登录失败，验证码错误", false)
 		context.JSON(http.StatusOK, gin.H{
 			"msg":  "请输入正确的验证码",
 			"code": http.StatusInternalServerError,
 		})
+		return false
 	}
-	return isVerify
+	return true
 }
 
 // 判断用户是否存在 返回bool类型

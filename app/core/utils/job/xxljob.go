@@ -6,7 +6,7 @@ import (
 	"github.com/xxl-job/xxl-job-executor-go"
 	"github.com/xxl-job/xxl-job-executor-go/example/task"
 	"log"
-	"ruoyi-go/config"
+	"haocean/health-enforcement/config"
 	"strconv"
 )
 

@@ -6,7 +6,7 @@ import (
 	"gorm.io/gorm/logger"
 	"log"
 	"os"
-	"ruoyi-go/config"
+	"haocean/health-enforcement/config"
 	"sync"
 	"time"
 )

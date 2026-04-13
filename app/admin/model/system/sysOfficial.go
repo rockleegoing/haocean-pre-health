@@ -54,3 +54,45 @@ func DeleteOfficial(ids []int64) string {
 	mysql.MysqlDb().Delete(&SysOfficial{}, "official_id IN ?", ids)
 	return "删除成功"
 }
+
+// SearchOfficialParam 执法人员查询参数
+type SearchOfficialParam struct {
+	PageNum    int    `form:"pageNum"`
+	PageSize   int    `form:"pageSize"`
+	Realname   string `form:"realname"`
+	BadgeNo    string `form:"badgeNo"`
+	Department string `form:"department"`
+	Status     int    `form:"status"`
+}
+
+// SelectOfficialList 查询执法人员列表
+func SelectOfficialList(param SearchOfficialParam) map[string]interface{} {
+	var list []SysOfficial
+	var total int64
+	db := mysql.MysqlDb().Model(&SysOfficial{})
+
+	if param.BadgeNo != "" {
+		db = db.Where("badge_no LIKE ?", "%"+param.BadgeNo+"%")
+	}
+	if param.Department != "" {
+		db = db.Where("department LIKE ?", "%"+param.Department+"%")
+	}
+	if param.Status >= 0 {
+		db = db.Where("status = ?", param.Status)
+	}
+
+	db.Count(&total)
+	db.Offset((param.PageNum - 1) * param.PageSize).Limit(param.PageSize).Find(&list)
+
+	return map[string]interface{}{
+		"rows":  list,
+		"total": total,
+	}
+}
+
+// IsExistBadgeNo 检查执法证号是否存在
+func IsExistBadgeNo(badgeNo string) bool {
+	var count int64
+	mysql.MysqlDb().Model(&SysOfficial{}).Where("badge_no = ?", badgeNo).Count(&count)
+	return count > 0
+}

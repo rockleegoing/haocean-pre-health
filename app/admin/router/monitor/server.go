@@ -2,8 +2,8 @@ package monitor
 
 import (
 	"github.com/gin-gonic/gin"
-	"ruoyi-go/app/admin/api/monitor"
-	"ruoyi-go/app/core/utils/jwt"
+	"haocean/health-enforcement/app/admin/api/monitor"
+	"haocean/health-enforcement/app/core/utils/jwt"
 )
 
 func InitServer(e *gin.Engine) {

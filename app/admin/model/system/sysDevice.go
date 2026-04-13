@@ -57,3 +57,37 @@ func DeleteDevice(ids []int64) string {
 	mysql.MysqlDb().Delete(&SysDevice{}, "device_id IN ?", ids)
 	return "删除成功"
 }
+
+// SearchDeviceParam 设备查询参数
+type SearchDeviceParam struct {
+	PageNum     int    `form:"pageNum"`
+	PageSize    int    `form:"pageSize"`
+	DeviceModel string `form:"deviceModel"`
+	OsType      string `form:"osType"`
+	Status      int    `form:"status"`
+}
+
+// SelectDeviceList 查询设备列表
+func SelectDeviceList(param SearchDeviceParam) map[string]interface{} {
+	var list []SysDevice
+	var total int64
+	db := mysql.MysqlDb().Model(&SysDevice{})
+
+	if param.DeviceModel != "" {
+		db = db.Where("device_model LIKE ?", "%"+param.DeviceModel+"%")
+	}
+	if param.OsType != "" {
+		db = db.Where("os_type = ?", param.OsType)
+	}
+	if param.Status >= 0 {
+		db = db.Where("status = ?", param.Status)
+	}
+
+	db.Count(&total)
+	db.Offset((param.PageNum - 1) * param.PageSize).Limit(param.PageSize).Find(&list)
+
+	return map[string]interface{}{
+		"rows":  list,
+		"total": total,
+	}
+}

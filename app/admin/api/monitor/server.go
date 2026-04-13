@@ -3,7 +3,7 @@ package monitor
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"ruoyi-go/app/admin/model/monitor"
+	"haocean/health-enforcement/app/admin/model/monitor"
 )
 
 func ServerData(context *gin.Context) {

@@ -2,10 +2,10 @@ package cache
 
 import (
 	"encoding/json"
-	"ruoyi-go/app/admin/model/constants"
-	"ruoyi-go/app/admin/model/system"
-	"ruoyi-go/app/admin/model/tools"
-	"ruoyi-go/pkg/cache/redisCache"
+	"haocean/health-enforcement/app/admin/model/constants"
+	"haocean/health-enforcement/app/admin/model/system"
+	"haocean/health-enforcement/app/admin/model/tools"
+	"haocean/health-enforcement/pkg/cache/redisCache"
 )
 
 // InitDicCache 初始化数据字典到redis

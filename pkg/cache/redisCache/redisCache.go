@@ -2,7 +2,7 @@ package redisCache
 
 import (
 	"context"
-	"ruoyi-go/pkg/redis"
+	"haocean/health-enforcement/pkg/redis"
 	"time"
 )
 

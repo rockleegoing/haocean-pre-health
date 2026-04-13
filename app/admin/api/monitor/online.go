@@ -4,10 +4,10 @@ import (
 	"encoding/json"
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"ruoyi-go/app/admin/model/constants"
-	"ruoyi-go/app/admin/model/monitor"
-	"ruoyi-go/app/core/utils/R"
-	"ruoyi-go/pkg/cache/redisCache"
+	"haocean/health-enforcement/app/admin/model/constants"
+	"haocean/health-enforcement/app/admin/model/monitor"
+	"haocean/health-enforcement/app/core/utils/R"
+	"haocean/health-enforcement/pkg/cache/redisCache"
 	"strings"
 )
 

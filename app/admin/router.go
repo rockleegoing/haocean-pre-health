@@ -2,9 +2,7 @@ package admin
 
 import (
 	api "haocean/health-enforcement/app/admin/api/system"
-	"haocean/health-enforcement/app/admin/router/monitor"
 	"haocean/health-enforcement/app/admin/router/system"
-	"haocean/health-enforcement/app/admin/router/tools"
 	"haocean/health-enforcement/app/core/utils/jwt"
 	"time"
 

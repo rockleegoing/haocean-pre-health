@@ -4,10 +4,10 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/wxnacy/wgo/arrays"
 	"net/http"
-	"ruoyi-go/app/admin/model/system"
-	"ruoyi-go/app/admin/model/tools"
-	"ruoyi-go/app/core/utils"
-	"ruoyi-go/app/core/utils/R"
+	"haocean/health-enforcement/app/admin/model/system"
+	"haocean/health-enforcement/app/admin/model/tools"
+	"haocean/health-enforcement/app/core/utils"
+	"haocean/health-enforcement/app/core/utils/R"
 	"strconv"
 )
 

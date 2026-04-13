@@ -4,9 +4,9 @@ import (
 	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
-	"ruoyi-go/app/admin/model/constants"
-	"ruoyi-go/app/core/utils/R"
-	"ruoyi-go/pkg/cache/redisCache"
+	"haocean/health-enforcement/app/admin/model/constants"
+	"haocean/health-enforcement/app/core/utils/R"
+	"haocean/health-enforcement/pkg/cache/redisCache"
 	"strings"
 )
 

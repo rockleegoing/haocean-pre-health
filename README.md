@@ -1,7 +1,7 @@
 <p style="text-align: center;">
 	<img alt="logo" src="https://oscimg.oschina.net/oscnet/up-d3d0a9303e11d522a06cd263f3079027715.png">
 </p>
-<h1 style="text-align: center; margin: 30px 0 30px; font-weight: bold;">RuoYi-Go v1.0.2</h1>
+<h1 style="text-align: center; margin: 30px 0 30px; font-weight: bold;">Haocean HealthEnforcement v1.0.2</h1>
 <h4 style="text-align: center;">基于Gin+Vue Go快速开发框架</h4>
 <p style="text-align: center;">
 	<a alt="" href="https://gitee.com/OptimisticDevelopers/ruoyi-go/stargazers"><img src="https://gitee.com/OptimisticDevelopers/ruoyi-go/badge/star.svg?theme=dark"></a>

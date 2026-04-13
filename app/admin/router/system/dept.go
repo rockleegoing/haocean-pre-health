@@ -2,8 +2,8 @@ package system
 
 import (
 	"github.com/gin-gonic/gin"
-	"ruoyi-go/app/admin/api/system"
-	"ruoyi-go/app/core/utils/jwt"
+	"haocean/health-enforcement/app/admin/api/system"
+	"haocean/health-enforcement/app/core/utils/jwt"
 )
 
 func InitDept(e *gin.Engine) {

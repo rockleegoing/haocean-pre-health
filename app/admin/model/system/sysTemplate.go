@@ -17,6 +17,8 @@ type SysDocumentTemplate struct {
 	TemplateType  string          `gorm:"size:20" json:"templateType"`                    // 模板类型（word/pdf）
 	Fields        json.RawMessage `gorm:"type:json" json:"fields"`                        // 填空项定义
 	FilePath      string          `gorm:"size:255" json:"filePath"`                       // 模板文件路径
+	FileName      string          `gorm:"size:255" json:"fileName"`                       // 原始文件名
+	FileSize      int64           `gorm:"default:0" json:"fileSize"`                      // 文件大小（字节）
 	FileContent   string          `gorm:"type:longtext" json:"fileContent"`               // 模板内容（base64）
 	Version       string          `gorm:"size:20;default:'1.0'" json:"version"`           // 版本号
 	IsEnabled     int             `gorm:"default:1" json:"isEnabled"`                     // 是否启用
@@ -102,4 +104,13 @@ type SearchTemplateParam struct {
 	CategoryId   int64  `form:"categoryId"`
 	IndustryId   int64  `form:"industryId"`
 	IsEnabled    int    `form:"isEnabled"`
+}
+
+// FindTemplatesByIndustryId 根据行业 ID 查询模板列表
+func FindTemplatesByIndustryId(industryId int64) []SysDocumentTemplate {
+	var templates []SysDocumentTemplate
+	mysql.MysqlDb().Where("industry_id = ? AND is_enabled = 1", industryId).
+		Order("sort_order, create_time DESC").
+		Find(&templates)
+	return templates
 }

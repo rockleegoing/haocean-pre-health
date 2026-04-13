@@ -1,9 +1,9 @@
 package cache
 
 import (
-	"ruoyi-go/app/admin/model/constants"
-	"ruoyi-go/config"
-	"ruoyi-go/pkg/cache/redisCache"
+	"haocean/health-enforcement/app/admin/model/constants"
+	"haocean/health-enforcement/config"
+	"haocean/health-enforcement/pkg/cache/redisCache"
 	"strconv"
 	"time"
 )

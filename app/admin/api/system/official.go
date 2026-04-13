@@ -29,10 +29,8 @@ func ListOfficial(c *gin.Context) {
 	param.Status, _ = strconv.Atoi(c.DefaultQuery("status", "-1"))
 
 	result := system.SelectOfficialList(param)
-	result.Code = http.StatusOK
-	result.Msg = "查询成功"
 
-	c.JSON(http.StatusOK, result)
+	c.JSON(http.StatusOK, R.ReturnSuccess(result))
 }
 
 // GetOfficial 获取执法人员详情
@@ -54,11 +52,6 @@ func AddOfficial(c *gin.Context) {
 	var official system.SysOfficial
 	if err := c.ShouldBindJSON(&official); err != nil {
 		c.JSON(http.StatusOK, R.ReturnFailMsg("参数错误"))
-		return
-	}
-
-	if official.Realname == "" {
-		c.JSON(http.StatusOK, R.ReturnFailMsg("姓名不能为空"))
 		return
 	}
 

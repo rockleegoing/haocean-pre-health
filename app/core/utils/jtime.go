@@ -3,7 +3,7 @@ package utils
 import (
 	"database/sql/driver"
 	"fmt"
-	"ruoyi-go/app/admin/model/constants"
+	"haocean/health-enforcement/app/admin/model/constants"
 	"time"
 )
 

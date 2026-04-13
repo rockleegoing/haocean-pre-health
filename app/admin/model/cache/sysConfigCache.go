@@ -1,10 +1,10 @@
 package cache
 
 import (
-	"ruoyi-go/app/admin/model/constants"
-	"ruoyi-go/app/admin/model/system"
-	"ruoyi-go/app/admin/model/tools"
-	"ruoyi-go/pkg/cache/redisCache"
+	"haocean/health-enforcement/app/admin/model/constants"
+	"haocean/health-enforcement/app/admin/model/system"
+	"haocean/health-enforcement/app/admin/model/tools"
+	"haocean/health-enforcement/pkg/cache/redisCache"
 )
 
 // InitSysConfigCache 初始化参数配置到redis

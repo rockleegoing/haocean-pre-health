@@ -3,8 +3,8 @@ package utils
 import (
 	"github.com/mojocn/base64Captcha"
 	"image/color"
-	"ruoyi-go/config"
-	"ruoyi-go/pkg/cache"
+	"haocean/health-enforcement/config"
+	"haocean/health-enforcement/pkg/cache"
 )
 
 // var store = base64Captcha.NewMemoryStore(20240, 3*time.Minute)

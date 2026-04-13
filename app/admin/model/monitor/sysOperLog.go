@@ -2,11 +2,11 @@ package monitor
 
 import (
 	"github.com/gin-gonic/gin"
-	"ruoyi-go/app/admin/model/system"
-	"ruoyi-go/app/admin/model/tools"
-	utils2 "ruoyi-go/app/core/utils"
-	"ruoyi-go/app/core/utils/R"
-	"ruoyi-go/pkg/mysql"
+	"haocean/health-enforcement/app/admin/model/system"
+	"haocean/health-enforcement/app/admin/model/tools"
+	utils2 "haocean/health-enforcement/app/core/utils"
+	"haocean/health-enforcement/app/core/utils/R"
+	"haocean/health-enforcement/pkg/mysql"
 	"strconv"
 	"time"
 )

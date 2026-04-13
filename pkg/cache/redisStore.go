@@ -2,8 +2,8 @@ package cache
 
 import (
 	"fmt"
-	"ruoyi-go/app/admin/model/constants"
-	"ruoyi-go/pkg/cache/redisCache"
+	"haocean/health-enforcement/app/admin/model/constants"
+	"haocean/health-enforcement/pkg/cache/redisCache"
 	"time"
 )
 

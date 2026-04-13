@@ -3,7 +3,7 @@ package system
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"ruoyi-go/app/core/utils/R"
+	"haocean/health-enforcement/app/core/utils/R"
 )
 
 // 后台获取 首页数据

@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-	"ruoyi-go/config"
+	"haocean/health-enforcement/config"
 )
 
 func GetXxlJobCookie() []byte {

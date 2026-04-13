@@ -6,6 +6,7 @@ import (
 	"haocean/health-enforcement/app/core/utils/R"
 	"net/http"
 	"strconv"
+	"strings"
 )
 
 // ListIndustry 查询行业分类列表
@@ -78,8 +79,9 @@ func DeleteIndustry(c *gin.Context) {
 	}
 
 	// 将逗号分隔的 ID 转换为数组
+	idStrings := strings.Split(idsStr, ",")
 	var ids []int64
-	for _, idStr := range split(idsStr) {
+	for _, idStr := range idStrings {
 		id, _ := strconv.ParseInt(idStr, 10, 64)
 		ids = append(ids, id)
 	}
@@ -97,16 +99,19 @@ func DeleteIndustry(c *gin.Context) {
 	c.JSON(http.StatusOK, R.ReturnSuccess(msg))
 }
 
-// split 辅助函数：分割字符串
-func split(s string) []string {
-	result := make([]string, 0)
-	for _, item := range []rune(s) {
-		if item == ',' {
-			continue
+// BuildIndustryTreeResponse 构建树形结构响应
+func BuildIndustryTreeResponse(industries []system.SysIndustry) []system.SysIndustry {
+	return buildIndustryTree(industries, 0)
+}
+
+// buildIndustryTree 构建树形结构
+func buildIndustryTree(all []system.SysIndustry, parentId int64) []system.SysIndustry {
+	var tree []system.SysIndustry
+	for _, item := range all {
+		if item.ParentId == parentId {
+			item.Children = buildIndustryTree(all, item.IndustryId)
+			tree = append(tree, item)
 		}
-		// 简单处理，实际需要更完善的实现
-		_ = item
 	}
-	// 使用 strings.Split 代替
-	return nil
+	return tree
 }

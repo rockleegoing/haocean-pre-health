@@ -2,10 +2,10 @@ package db
 
 import (
 	"gorm.io/gorm"
-	"ruoyi-go/config"
-	"ruoyi-go/pkg/mysql"
-	"ruoyi-go/pkg/postgres"
-	"ruoyi-go/pkg/sqlite"
+	"haocean/health-enforcement/config"
+	"haocean/health-enforcement/pkg/mysql"
+	"haocean/health-enforcement/pkg/postgres"
+	"haocean/health-enforcement/pkg/sqlite"
 )
 
 func Exe(param ...bool) *gorm.DB {

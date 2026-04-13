@@ -5,15 +5,13 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"runtime"
-	"ruoyi-go/app/admin/model/cache"
-	"ruoyi-go/app/core/routers"
-	"ruoyi-go/app/core/utils"
-	"ruoyi-go/app/core/utils/job"
-	"ruoyi-go/app/core/utils/shutdown"
-	"ruoyi-go/config"
-	"ruoyi-go/pkg/logs"
-	"ruoyi-go/pkg/scheduler"
+	"haocean/health-enforcement/app/admin/model/cache"
+	"haocean/health-enforcement/app/core/routers"
+	"haocean/health-enforcement/app/core/utils/job"
+	"haocean/health-enforcement/app/core/utils/shutdown"
+	"haocean/health-enforcement/config"
+	"haocean/health-enforcement/pkg/logs"
+	"haocean/health-enforcement/pkg/scheduler"
 	"strconv"
 
 	xxl_job_executor_gin "github.com/gin-middleware/xxl-job-executor"
@@ -47,14 +45,13 @@ func main() {
 	}
 	// 初始化缓存
 	cache.InitCache()
-	//打开浏览器
-	if runtime.GOOS == "windows" {
-		utils.OpenWin("http://127.0.0.1:" + strconv.Itoa(config.Server.Port))
-	}
-
-	if runtime.GOOS == "darwin" {
-		utils.OpenMac("http://127.0.0.1:" + strconv.Itoa(config.Server.Port))
-	}
+	// 开发模式下不自动打开浏览器 (由 start-dev.sh 统一打开)
+	// if runtime.GOOS == "windows" {
+	// 	utils.OpenWin("http://127.0.0.1:" + strconv.Itoa(config.Server.Port))
+	// }
+	// if runtime.GOOS == "darwin" {
+	// 	utils.OpenMac("http://127.0.0.1:" + strconv.Itoa(config.Server.Port))
+	// }
 
 	srv := &http.Server{
 		Addr:    ":" + strconv.Itoa(config.Server.Port),

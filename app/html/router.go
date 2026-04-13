@@ -1,7 +1,7 @@
 package html
 
 import (
-	"ruoyi-go/app/html/web"
+	"haocean/health-enforcement/app/html/web"
 	"time"
 
 	cache "github.com/chenyahui/gin-cache"

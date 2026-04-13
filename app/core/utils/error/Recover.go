@@ -6,7 +6,7 @@ import (
 	"log"
 	"net/http"
 	"runtime/debug"
-	"ruoyi-go/app/admin/service/monitor"
+	"haocean/health-enforcement/app/admin/service/monitor"
 )
 
 /*

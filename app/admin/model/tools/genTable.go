@@ -1,7 +1,7 @@
 package tools
 
 import (
-	"ruoyi-go/app/core/utils"
+	"haocean/health-enforcement/app/core/utils"
 )
 
 type GenTable struct {

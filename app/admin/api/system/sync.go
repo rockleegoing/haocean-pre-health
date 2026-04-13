@@ -34,7 +34,7 @@ func SyncIndustries(c *gin.Context) {
 	industries := system.SelectIndustryList(system.SysIndustry{})
 
 	// 构建树形结构
-	tree := system.BuildIndustryTreeResponse(industries)
+	tree := BuildIndustryTreeResponse(industries)
 
 	c.JSON(http.StatusOK, R.ReturnSuccess(gin.H{
 		"industries": tree,
@@ -90,7 +90,7 @@ func SyncRecords(c *gin.Context) {
 		}
 
 		// 更新同步队列状态
-		system.UpdateSyncQueueStatus(record.RecordId, "success")
+		system.UpdateSyncQueueStatus(record.RecordId, "success", "")
 	}
 
 	c.JSON(http.StatusOK, R.ReturnSuccess(gin.H{
@@ -135,7 +135,7 @@ func SyncSubjects(c *gin.Context) {
 		}
 
 		// 更新同步队列状态
-		system.UpdateSyncQueueStatus(subject.SubjectId, "success")
+		system.UpdateSyncQueueStatus(subject.SubjectId, "success", "")
 	}
 
 	c.JSON(http.StatusOK, R.ReturnSuccess(gin.H{
@@ -146,10 +146,7 @@ func SyncSubjects(c *gin.Context) {
 
 // GetSyncStatus 获取同步状态
 func GetSyncStatus(c *gin.Context) {
-	deviceId := c.Query("deviceId")
-	recordId, _ := strconv.ParseInt(c.Query("recordId"), 10, 64)
-
-	status := system.GetSyncStatusByRecordId(recordId)
+	status := system.GetSyncStatus(0)
 
 	c.JSON(http.StatusOK, R.ReturnSuccess(status))
 }

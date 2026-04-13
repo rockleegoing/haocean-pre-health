@@ -117,10 +117,8 @@ func ListDevice(c *gin.Context) {
 	param.Status, _ = strconv.Atoi(c.DefaultQuery("status", "-1"))
 
 	result := system.SelectDeviceList(param)
-	result.Code = http.StatusOK
-	result.Msg = "查询成功"
 
-	c.JSON(http.StatusOK, result)
+	c.JSON(http.StatusOK, R.ReturnSuccess(result))
 }
 
 // UpdateDevice 修改设备信息
@@ -198,7 +196,7 @@ func UpdateLastLogin(c *gin.Context) {
 		return
 	}
 
-	device.LastLoginIP = param.LoginIP
+	device.LastLoginIp = param.LoginIP
 	msg := system.SaveDevice(device)
 
 	c.JSON(http.StatusOK, R.ReturnSuccess(msg))

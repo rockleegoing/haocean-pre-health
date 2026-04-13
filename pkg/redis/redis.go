@@ -3,7 +3,7 @@ package redis
 import (
 	"context"
 	"github.com/go-redis/redis/v8"
-	"ruoyi-go/config"
+	"haocean/health-enforcement/config"
 	"sync"
 	"time"
 )

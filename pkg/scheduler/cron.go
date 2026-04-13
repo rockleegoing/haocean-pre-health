@@ -3,10 +3,10 @@ package scheduler
 import (
 	"github.com/robfig/cron"
 	"github.com/sirupsen/logrus"
-	"ruoyi-go/app/admin/model/monitor"
-	"ruoyi-go/app/admin/model/tools"
-	"ruoyi-go/app/admin/service/tesk"
-	"ruoyi-go/app/core/utils"
+	"haocean/health-enforcement/app/admin/model/monitor"
+	"haocean/health-enforcement/app/admin/model/tools"
+	"haocean/health-enforcement/app/admin/service/tesk"
+	"haocean/health-enforcement/app/core/utils"
 )
 
 var c *cron.Cron

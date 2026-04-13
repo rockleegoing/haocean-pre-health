@@ -2,8 +2,8 @@ package tools
 
 import (
 	"github.com/gin-gonic/gin"
-	"ruoyi-go/app/admin/api/tools"
-	"ruoyi-go/app/core/utils/jwt"
+	"haocean/health-enforcement/app/admin/api/tools"
+	"haocean/health-enforcement/app/core/utils/jwt"
 )
 
 func InitCommon(e *gin.Engine) {

@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"os"
 	"path"
-	"ruoyi-go/app/core/utils/R"
-	"ruoyi-go/config"
+	"haocean/health-enforcement/app/core/utils/R"
+	"haocean/health-enforcement/config"
 	"strconv"
 	"strings"
 )

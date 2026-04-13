@@ -1,7 +1,7 @@
 package utils
 
 import (
-	"ruoyi-go/app/admin/model/constants"
+	"haocean/health-enforcement/app/admin/model/constants"
 	"time"
 )
 

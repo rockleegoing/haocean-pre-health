@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"strconv"
 	"strings"
+	"time"
 )
 
 // ListRecord 查询执法记录列表
@@ -131,7 +132,7 @@ func SubmitRecord(c *gin.Context) {
 
 	// 添加到同步队列
 	system.AddSyncQueue(system.SysSyncQueue{
-		TableName:  "law_enforcement_record",
+		TableRef:   "law_enforcement_record",
 		RecordId:   id,
 		Action:     "update",
 		SyncType:   "app_to_server",

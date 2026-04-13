@@ -1,8 +1,8 @@
 package system
 
 import (
-	"ruoyi-go/app/core/utils/R"
-	"ruoyi-go/pkg/mysql"
+	"haocean/health-enforcement/app/core/utils/R"
+	"haocean/health-enforcement/pkg/mysql"
 )
 
 type SysRoleMenu struct {

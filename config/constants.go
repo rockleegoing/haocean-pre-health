@@ -8,7 +8,7 @@ const (
 	ProjectVersion = "v1.0.2"
 
 	// ProjectName 项目名称
-	ProjectName = "ruoyi-go"
+	ProjectName = "haocean/health-enforcement"
 
 	// ProjectDomain 项目域名
 	ProjectDomain = "http://127.0.0.1"

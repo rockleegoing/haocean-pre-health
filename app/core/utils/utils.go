@@ -83,7 +83,7 @@ type Tunit struct {
 
 func GetRealAddressByIP(ip string) string {
 	url := "http://whois.pconline.com.cn/ipJson.jsp?ip=" + ip + "&json=true"
-	if ip == "127.0.0.1" {
+	if ip == "127.0.0.1" || ip == "::1" {
 		return "内网ip"
 	}
 	resp, err := http.Get(url)
@@ -99,7 +99,11 @@ func GetRealAddressByIP(ip string) string {
 			dws := new(Tunit)
 			if body != nil {
 				json.Unmarshal(body, &dws)
+			}
+			if dws != nil && dws.Pro != "" {
 				result = dws.Pro + " " + dws.City
+			} else {
+				result = "内网 ip"
 			}
 		}
 	}

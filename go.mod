@@ -1,4 +1,4 @@
-module ruoyi-go
+module haocean/health-enforcement
 
 go 1.24.0
 
@@ -33,6 +33,7 @@ require (
 	golang.org/x/crypto v0.47.0
 	gopkg.in/yaml.v2 v2.4.0
 	gorm.io/driver/mysql v1.4.1
+	gorm.io/driver/sqlite v1.6.0
 	gorm.io/gorm v1.31.1
 )
 
@@ -107,5 +108,4 @@ require (
 	golang.org/x/tools v0.41.0 // indirect
 	google.golang.org/protobuf v1.36.11 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
-	gorm.io/driver/sqlite v1.6.0 // indirect
 )

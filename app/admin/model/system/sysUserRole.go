@@ -1,8 +1,8 @@
 package system
 
 import (
-	"ruoyi-go/app/admin/model/tools"
-	"ruoyi-go/pkg/mysql"
+	"haocean/health-enforcement/app/admin/model/tools"
+	"haocean/health-enforcement/pkg/mysql"
 )
 
 // SysUserRole model：数据库字段

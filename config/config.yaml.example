@@ -13,7 +13,7 @@ database:
     port: 3306
     username: root
     password: you_mysql_password
-    dbname: ry-go
+    dbname: haocean_health
   secondary:
     enabled: false
     type: mysql
@@ -21,7 +21,7 @@ database:
     port: 3306
     username: root
     password: you_mysql_password
-    dbname: ry-go
+    dbname: haocean_health
   max_idle_conn: 10
   max_open_conn: 30
   conn_max_lifetime: 300
@@ -53,7 +53,7 @@ xxl-job:
 log:
   enabled: false    # 是开启
   logMode: default # default mysql file es
-  filePath: home/ruoyi/log # 日志本地的话存放地址
+  filePath: home/health-enforcement/log # 日志本地的话存放地址
   filterate:   # 日志过滤的接口
     - '/reg'
 

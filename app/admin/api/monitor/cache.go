@@ -3,9 +3,9 @@ package monitor
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"ruoyi-go/app/admin/model/constants"
-	"ruoyi-go/app/admin/model/monitor"
-	"ruoyi-go/pkg/cache/redisCache"
+	"haocean/health-enforcement/app/admin/model/constants"
+	"haocean/health-enforcement/app/admin/model/monitor"
+	"haocean/health-enforcement/pkg/cache/redisCache"
 )
 
 func CacheHandler(context *gin.Context) {

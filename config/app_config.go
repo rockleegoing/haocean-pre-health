@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 	"path"
-	"ruoyi-go/app/core/utils/R"
+	"haocean/health-enforcement/app/core/utils/R"
 )
 
 var Server *server

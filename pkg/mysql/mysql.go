@@ -3,7 +3,7 @@ package mysql
 import (
 	"log"
 	"os"
-	"ruoyi-go/config"
+	"haocean/health-enforcement/config"
 	"sync"
 	"time"
 
