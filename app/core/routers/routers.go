@@ -84,9 +84,19 @@ func InitWeb(r *gin.Engine) {
 	if isDevelopment() {
 		// === 开发环境：代理到前端开发服务器 ===
 
-		// PC 前端代理 (Vue dev server: 1024)
+		// API 请求不代理，直接返回 404（由后端 API 路由处理）
 		r.NoRoute(func(c *gin.Context) {
 			path := c.Request.URL.Path
+
+			// API 请求不代理到前端
+			if strings.HasPrefix(path, "/system/") ||
+			   strings.HasPrefix(path, "/monitor/") ||
+			   strings.HasPrefix(path, "/tools/") ||
+			   strings.HasPrefix(path, "/api/") ||
+			   strings.HasPrefix(path, "/swagger/") {
+				c.JSON(404, gin.H{"error": "Not found"})
+				return
+			}
 
 			// favicon.ico 代理到 PC 前端
 			if strings.HasPrefix(path, "/favicon.ico") {
@@ -97,12 +107,6 @@ func InitWeb(r *gin.Engine) {
 			// PC 前端及其静态资源
 			if strings.HasPrefix(path, "/admin") || strings.HasPrefix(path, "/static") {
 				createProxy("http://localhost:1024")(c)
-				return
-			}
-
-			// API 404
-			if strings.HasPrefix(path, "/api") || strings.HasPrefix(path, "/swagger") {
-				c.JSON(404, gin.H{"error": "Not found"})
 				return
 			}
 
