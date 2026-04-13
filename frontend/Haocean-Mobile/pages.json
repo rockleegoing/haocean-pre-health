@@ -196,6 +196,32 @@
 			"style": {
 				"navigationBarTitleText": "搜索规范用语"
 			}
+		},
+		{
+			"path": "pages/law/index",
+			"style": {
+				"navigationBarTitleText": "法律法规",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/law/list",
+			"style": {
+				"navigationBarTitleText": "法规列表",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/law/detail",
+			"style": {
+				"navigationBarTitleText": "法规详情"
+			}
+		},
+		{
+			"path": "pages/law/search",
+			"style": {
+				"navigationBarTitleText": "搜索法规"
+			}
 		}
 	],
 	"tabBar": {
