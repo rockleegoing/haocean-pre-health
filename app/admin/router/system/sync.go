@@ -21,6 +21,7 @@ func InitSync(e *gin.Engine) {
 			auth.POST("/sync/subjects", system.SyncSubjects)
 			auth.GET("/sync/status", system.GetSyncStatus)
 			auth.POST("/sync/retry", system.RetrySync)
+			auth.GET("/sync/list", system.ListSync)
 		}
 	}
 }
