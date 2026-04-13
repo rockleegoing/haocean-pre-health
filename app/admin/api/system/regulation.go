@@ -23,7 +23,12 @@ func ListRegulation(c *gin.Context) {
 	pageSize, _ := strconv.Atoi(c.DefaultQuery("pageSize", "10"))
 
 	regulations, total := system.SelectRegulationList(param, page, pageSize)
-	c.JSON(http.StatusOK, R.ReturnPageResult(regulations, int(total), page, pageSize))
+	c.JSON(http.StatusOK, R.ReturnSuccess(gin.H{
+		"rows": regulations,
+		"total": total,
+		"pageNum": page,
+		"pageSize": pageSize,
+	}))
 }
 
 // GetRegulation 获取法律法规详情
@@ -114,7 +119,6 @@ func GetRegulationHome(c *gin.Context) {
 	var legalTypeCounts []CountInfo
 	for _, lt := range legalTypes {
 		var count int64
-		system.SysRegulation{}
 		mysql.MysqlDb().Model(&system.SysRegulation{}).Where("legal_type = ? AND status = 1", lt.TypeCode).Count(&count)
 		legalTypeCounts = append(legalTypeCounts, CountInfo{
 			Type:  lt.TypeCode,
@@ -133,7 +137,6 @@ func GetRegulationHome(c *gin.Context) {
 // GetRegulationBookList 获取法律法规书本列表（按法律类型筛选）
 func GetRegulationBookList(c *gin.Context) {
 	legalType := c.Query("legalType")
-	supervisionType := c.Query("supervisionType")
 
 	var regulations []system.SysRegulation
 	db := mysql.MysqlDb().Model(&system.SysRegulation{}).Where("status = 1")
@@ -201,7 +204,6 @@ func GetRegulationChapterContent(c *gin.Context) {
 func SearchRegulation(c *gin.Context) {
 	keyword := c.Query("keyword")
 	legalType := c.Query("legalType")
-	supervisionType := c.Query("supervisionType")
 
 	var regulations []system.SysRegulation
 	db := mysql.MysqlDb().Model(&system.SysRegulation{}).Where("status = 1")
